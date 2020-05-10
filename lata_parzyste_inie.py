@@ -1,3 +1,4 @@
+'''
 zadanie 2:
 Cele
 
@@ -44,7 +45,7 @@ Oczekiwany wynik: Rok przestępny
 Przykładowe dane wejściowe: 1580
 
 Oczekiwany wynik: Nie w kalendarzu gregoriańskim
-
+'''
 
 
 
@@ -52,10 +53,18 @@ Oczekiwany wynik: Nie w kalendarzu gregoriańskim
 rok = int(input("Wprowadź rok: "))
 #
 # tutaj wpisz swój kod
-if rok % 4 != 0 :
-    print("zwykly rok")
-#elif rok % 100 = 0:
- #   print("nie w kalendarzu gregorianskim")
-else:
-    print("rok przystepny")
+# if rok % 4 != 0 :
+    # print("zwykly rok")
+# elif (rok % 100) == 0:
+    # print("nie w kalendarzu gregorianskim")
+# else:
+    # print("rok przystepny")
 
+	
+	
+if rok < 1582 :
+	print("nie w kalendarzu gregorianskim")
+elif ((rok % 400) == 0) or (((rok % 4) == 0) and ((rok % 100) != 0)) :
+	print("rok przystepny")
+else :
+	print("rok nieprzystepny")
