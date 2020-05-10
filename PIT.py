@@ -1,16 +1,32 @@
-dochod = float(input("Wprowadź roczny dochód: "))
-ulga_podatkowa = print(float(85528 * 0.18 - 556.02))
-biedak = print(int("dochod" - "ulga podatkowa")
+kwota_prog_pierwszy = 85528
+ulga_podatkowa = 556.02
 
-if dochod < 85528:
+przychod = float(input("Wprowadz roczny przychod: "))
+kwota_podatku_przy_przekroczeniua_progu = float((kwota_prog_pierwszy * 0.18) - 556.02)
+podatek = 0
+	
+if przychod <= kwota_prog_pierwszy:
 	print("biedak")
-dochód = float(input("Wprowadź roczny dochód: "))
-#
-# tutaj wpisz swój kod
-#
-podatek = round(podatek, 0)
-print("Podatek wynosi:", podatek)
+	podatek = (przychod * 0.18)
+	if podatek < 0 :
+		podatek = 0
+else:
+	print("zlodziej")
+	podatek = (kwota_prog_pierwszy * 0.18)
+	podatek += ((przychod - kwota_prog_pierwszy) * 0.32 )
 
+podatek = round(przychod - ulga_podatkowa, 2)
+print("Podatek wynosi: ", podatek)	
+
+# dochod = float(input("Wprowadz roczny przychod: "))
+# #
+# # tutaj wpisz swój kod
+# #
+# podatek = round(przychod - ulga_podatkowa, 0)
+# print("Podatek wynosi:", podatek)
+
+
+'''
 Cele
 
     używanie instrukcji if-else aby rozgałęzić ścieżkę kontrolną;
@@ -18,9 +34,9 @@ Cele
 
 Scenariusz
 
-Dawno, dawno temu istniała kraina mlekiem i miodem płynąca, zamieszkana przez szczęśliwych i dostatnich ludzi. Ludzie oczywiście płacili podatki - ich szczęście miało ograniczenia. Najważniejszy podatek, zwany Podatkiem dochodowym (PIT w skrócie) musiał być płacony raz w roku i był obliczany zgodnie z następującą zasadą:
+Dawno, dawno temu istniała kraina mlekiem i miodem płynąca, zamieszkana przez szczęśliwych i dostatnich ludzi. Ludzie oczywiście płacili podatki - ich szczęście miało ograniczenia. Najważniejszy podatek, zwany Podatkiem przychodowym (PIT w skrócie) musiał być płacony raz w roku i był obliczany zgodnie z następującą zasadą:
 
-    jeżeli dochód obywatela nie był wyższy niż 85,528 talarów, podatek był równy 18% dochodu minus 556 talarów i 2 centy (była to tak zwana ulga podatkowa)
+    jeżeli dochód obywatela nie był wyższy niż 85,528 talarów, podatek był równy 18% przychodu minus 556 talarów i 2 centy (była to tak zwana ulga podatkowa)
     jeżeli dochód był wyższy niż ta kwota, podatek był równy 14,839 talarów i 2 centy plus 32% nadwyżki ponad 85,528 talarów.
 
 Twoim zadaniem jest napisać kalkulator podatkowy.
@@ -65,3 +81,4 @@ print("Podatek wynosi:", podatek)
 
 Prev Next
 We use cookies to improve our service. By continuing to use the site, you agree to our cookie policy. × 
+'''
